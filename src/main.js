@@ -17,7 +17,6 @@ Vue.config.productionTip = false;
 // Vue.use(Loading);
 // Vue.use(ServiceError);
 
-
 router.beforeEach((to, from, next) => {
   /* 路由发生变化时，动态设置页面title */
   if (to.meta.title) {
@@ -28,7 +27,8 @@ router.beforeEach((to, from, next) => {
 });
 router.afterEach((to, from) => {
   //new ShareJSSDK().setDefaultPageShare();
-});
+}); 
+
 
 new Vue({
   router,
