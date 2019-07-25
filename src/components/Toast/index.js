@@ -5,7 +5,7 @@ Toast.install = function(Vue, options) {
   let len = document.getElementsByClassName('toast-alert').length;
   if (len) {
     return;
-  };
+  }
   let toastTpl = Vue.extend(ToastVue);
   let $vm = new toastTpl();
   let tpl = $vm.$mount().$el;
