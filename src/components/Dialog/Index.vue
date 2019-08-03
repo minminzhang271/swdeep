@@ -1,21 +1,20 @@
 <template>
   <section>
-    <div class="jr-dialog-box" :class="{'show':visible}">
-      <div class="jr-dialog-mask"></div>
-      <div class="jr-dialog">
-        <div class="jr-dialog-close"
-         clstag="jr|keycount|zc_redhui003|mytangkuang003_rxscicon2"
+    <div class="sw-dialog-box" :class="{'show':visible}">
+      <div class="sw-dialog-mask"></div>
+      <div class="sw-dialog">
+        <div class="sw-dialog-close"
          @click="dialogClose"></div>
-        <div class="jr-dialog-content">
-          <div class="jr-dialog-title">
+        <div class="sw-dialog-content">
+          <div class="sw-dialog-title">
             <slot name="dialog-title">标题</slot>
           </div>
-          <div class="jr-dialog-body">
+          <div class="sw-dialog-body">
             <slot name="dialog-body">dialog body</slot>
           </div>
-          <div class="jr-dialog-footer">
+          <div class="sw-dialog-footer">
             <slot name="dialog-footer">
-               <div class="jr-dialog-button">去完成</div>
+               <div class="sw-dialog-button">去完成</div>
             </slot>
           </div>
         </div>
@@ -26,7 +25,7 @@
 
 <script>
 export default {
-  name: "jrDialog",
+  name: "Dialog",
   components: {},
   props: {
     visible: {
@@ -48,7 +47,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/scss/size.scss";
-.jr-dialog-box {
+.sw-dialog-box {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -60,7 +59,7 @@ export default {
     display: block;
   }
 
-  .jr-dialog-mask {
+  .sw-dialog-mask {
     background: rgba(0, 0, 0, 1);
     opacity: 0.6;
     width: 100%;
@@ -68,24 +67,24 @@ export default {
     position: absolute;
   }
 
-  .jr-dialog {
+  .sw-dialog {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 
-    .jr-dialog-close {
+    .sw-dialog-close {
       display: inline-block;
       position: absolute;
       right:  $rem30;
       top: $rem30;
       width: $rem28;
       height: $rem28;
-      background-image: url("https://m.360buyimg.com/jrqb/jfs/t1/35768/15/9169/499/5cd028b0Efb57f6e8/71121f2190dc9f72.png");
+      background-image: url(./assets/close.svg);
       background-size: 100% auto;
     }
 
-    .jr-dialog-content {
+    .sw-dialog-content {
       box-sizing: border-box;
       width: $rem590;
       // min-height: 4.46rem;
@@ -97,7 +96,7 @@ export default {
       padding-left: $rem48;
       padding-right: $rem48; 
 
-      .jr-dialog-title {
+      .sw-dialog-title {
         font-size: $rem52;
         font-family: PingFangSC-Semibold;
         font-weight: 600;
@@ -107,8 +106,8 @@ export default {
         margin-bottom:$rem32;
       }
 
-      .jr-dialog-footer {
-        .jr-dialog-button {
+      .sw-dialog-footer {
+        .sw-dialog-button {
           width:$rem470;
           height: $rem100;
           background: rgba(240, 34, 51, 1);

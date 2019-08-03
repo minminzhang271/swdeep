@@ -1,26 +1,24 @@
 
 <template>
   <div>
-    <div>IndexPage</div>
+    <div>array Page</div>
 
     <div @click="gotoPage('ListPage')">ListPage</div>
-    <div @click="gotoPage('PrinciplePage')">PrinciplePage</div>
-    <div @click="gotoPage('AysncPage')">AysncPage</div>
-    <div @click="gotoPage('AysncPage')">ClassPage</div>
-    <div @click="gotoPage('ArrayPage')">ArrayPage</div>
+  
   </div>
 </template>
 <script>
 import { arryUnique, reduce } from "@/util/common.js";
 
+
 export default {
-  name: "IndexPage",
+  name: "ArrayPage",
   components: {
     //注册
   },
   data() {
     return {
-      msg: "index msg"
+      msg: "array msg"
     };
   },
   computed: {
@@ -31,6 +29,8 @@ export default {
   watch: {},
 
   mounted() {
+ 
+
     this.utilTest();
   },
   destroyed() {},
@@ -38,7 +38,7 @@ export default {
     gotoPage(name) {
       this.$router.push({ name: name });
     },
-
+   
     utilTest() {
       //arryUnique.init();
       reduce.base();

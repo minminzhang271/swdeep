@@ -1,16 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import axios from 'axios'
+
 // import Toast from "@/components/Toast";
 // import Loading from "@/components/Loading";
 // import ServiceError from "@/components/ServiceError";
 
 
-Vue.config.productionTip = false
 
-Vue.prototype.$http = axios;
-Vue.config.productionTip = false;
+ 
 
 
 // Vue.use(Toast);
@@ -26,7 +24,7 @@ router.beforeEach((to, from, next) => {
   next();
 });
 router.afterEach((to, from) => {
-  //new ShareJSSDK().setDefaultPageShare();
+  
 }); 
 
 

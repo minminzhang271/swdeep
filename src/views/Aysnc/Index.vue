@@ -1,26 +1,22 @@
 
 <template>
   <div>
-    <div>IndexPage</div>
+    <div>aysnc</div>
 
     <div @click="gotoPage('ListPage')">ListPage</div>
-    <div @click="gotoPage('PrinciplePage')">PrinciplePage</div>
-    <div @click="gotoPage('AysncPage')">AysncPage</div>
-    <div @click="gotoPage('AysncPage')">ClassPage</div>
-    <div @click="gotoPage('ArrayPage')">ArrayPage</div>
   </div>
 </template>
 <script>
-import { arryUnique, reduce } from "@/util/common.js";
+import { asyncBase, asyncPromise, asyncAwait } from "@/util/asyncDemo.js";
 
 export default {
-  name: "IndexPage",
+  name: "AysncPage",
   components: {
     //注册
   },
   data() {
     return {
-      msg: "index msg"
+      msg: "aysnc msg"
     };
   },
   computed: {
@@ -31,7 +27,7 @@ export default {
   watch: {},
 
   mounted() {
-    this.utilTest();
+    this.aysncTest();
   },
   destroyed() {},
   methods: {
@@ -39,9 +35,15 @@ export default {
       this.$router.push({ name: name });
     },
 
-    utilTest() {
-      //arryUnique.init();
-      reduce.base();
+    aysncTest() {
+      //asyncBase.sync();
+      //asyncBase.async();
+      //asyncPromise.prom1();
+      //asyncPromise.promAllResolve();
+      //asyncPromise.promAllReject();
+      //asyncAwait.await1();
+      // asyncAwait.await2();
+      asyncAwait.await3();
     }
   }
 };
