@@ -2,6 +2,8 @@
 <template>
   <div>
     tip
+
+    <div>version 1.0 这是版本1.0 ,yes</div>
   </div>
 </template>
 <script>
