@@ -6,13 +6,13 @@
     <div @click="gotoPage('ListPage')">ListPage</div>
     <div @click="gotoPage('PrinciplePage')">PrinciplePage</div>
     <div @click="gotoPage('AysncPage')">AysncPage</div>
-    <div @click="gotoPage('AysncPage')">ClassPage</div>
+    <div @click="gotoPage('ClassPage')">ClassPage</div>
     <div @click="gotoPage('ArrayPage')">ArrayPage</div>
   </div>
 </template>
 <script>
 import { arryUnique, reduce } from "@/util/common.js";
-
+import DataType from "@/util/DataType/DataType.js";
 export default {
   name: "IndexPage",
   components: {
@@ -23,26 +23,27 @@ export default {
       msg: "index msg"
     };
   },
-  computed: {
-    scrollHeight: () => {
-      return document.body.scrollHeight;
-    }
-  },
+  computed: {},
   watch: {},
 
   mounted() {
-    this.utilTest();
+    this.test();
   },
   destroyed() {},
   methods: {
     gotoPage(name) {
       this.$router.push({ name: name });
     },
-
-    utilTest() {
-      //arryUnique.init();
-      reduce.base();
+    test() {
+      DataType.typeof();
+      DataType.instanceof();
+      DataType.objectTostring();
+      DataType.constructor();
     }
+    // utilTest() {
+    //   arryUnique.init();
+    //   reduce.base();
+    // }
   }
 };
 </script>

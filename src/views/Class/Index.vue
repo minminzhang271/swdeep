@@ -1,7 +1,7 @@
 
 <template>
   <div>
-    <div> class</div>
+    <div> class 定义和继承</div>
 
     <div @click="gotoPage('ListPage')">oop</div>
  
@@ -9,7 +9,13 @@
 </template>
 <script>
 
-import { classBase, classTest, classInherit } from "@/util/classDemo.js";
+import Copy from "@/util/Class/Copy.js";
+import ClassNew from "@/util/Class/ClassNew.js";
+import ClassDefine from "@/util/Class/ClassDefine.js";
+import ClassInherit from "@/util/Class/ClassInherit.js";
+import { cpus } from 'os';
+import { createHash } from 'crypto';
+
 
 export default {
   name: "classPage",
@@ -22,14 +28,15 @@ export default {
     };
   },
   computed: {
-    scrollHeight: () => {
-      return document.body.scrollHeight;
-    }
+   
   },
   watch: {},
 
   mounted() {
-    this.classTest();
+
+
+    this.test();
+ 
 
   
   },
@@ -38,13 +45,29 @@ export default {
     gotoPage(name) {
       this.$router.push({ name: name });
     },
-    /* classDemo */
-    classTest() {
-      classBase.create();
-      //classTest.create();
-      //classInherit.fn1.prototype_();
-      //classInherit.fn1.constructor_();
-      //classInherit.fn2.inheritPrototype();
+   
+    test() {
+
+      // Copy.copy();
+      // Copy.deepCopy();
+      Copy.jqExtend();
+      Copy.json();
+      Copy.assgin();
+
+      // ClassNew._new();
+      // ClassNew.fakeNew_();
+      // ClassNew._returnObj();
+      // ClassNew._returnStr();
+      // ClassNew.fakeNew();
+
+      
+
+      //ClassInherit.combination();
+      //ClassInherit.inheritPrototype();
+      // ClassInherit.es6();
+
+    
+    
     },
 
    

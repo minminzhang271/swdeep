@@ -14,7 +14,7 @@ const ArrayPage = () =>
 const ClassPage = () =>
     import( /* webpackChunkName: "class_page" */ './views/Class/Index.vue');
 const AysncPage = () =>
-    import( /* webpackChunkName: "aysnc_page" */ './views/Aysnc/Index.vue');
+    import( /* webpackChunkName: "aysnc_page" */ './views/Async/Index.vue');
 const ListPage = () =>
     import( /* webpackChunkName: "list_page" */ './views/List/Index.vue');
 
@@ -98,6 +98,14 @@ export default new Router({
             },
             component: ListPage,
 
+        },
+        {
+            path: "/list/lazyload",
+            name: "LazyloadPage",
+            meta: {
+                title: "Lazyload"
+            },
+            component: () => import( /* webpackChunkName: "Lazyload_page" */ './views/List/Lazyload.vue'),
         },
         {
             path: "/list/lifecycle",

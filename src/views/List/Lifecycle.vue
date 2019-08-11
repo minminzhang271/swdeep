@@ -1,5 +1,16 @@
 <template>
-  <div>list /vue 生命周期</div>
+  <div>
+    <div>list /vue 生命周期</div>
+
+
+    
+
+    <div>itmes : {{items}}</div>
+
+    <div @click="upItems">up items</div> 
+
+     <div @click="gotoPage('ListPage')">ListPage</div>
+  </div>
 </template>
 <script>
 //Vue.js 不能检测到下面数组变化：
@@ -19,6 +30,17 @@ export default {
       },
       items: ["a", "b", "c"]
     };
+  },
+  methods:{
+     gotoPage(name) {
+      console.log(this.$router);
+      this.$router.push({ name: name });
+    },
+    upItems(){
+      //this.items[2] = "999999";
+      this.$set(this.items,0,111);
+
+    }
   },
   beforeCreate: function() {
     console.group("beforeCreate 创建前");
@@ -74,6 +96,7 @@ export default {
     console.log(this.$el);
     console.log("%c%s", "color:red", "data   : " + this.$data);
     console.log("%c%s", "color:red", "message: " + this.message);
-  }
+  },
+  
 };
 </script>
